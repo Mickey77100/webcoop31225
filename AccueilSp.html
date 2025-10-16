@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="top-bar"></div>
+        <div class="gauche"></div>
+        <div class="image-base64 logo" data-id="logo" data-src="logo-base64.txt"></div>
+        
+        <h1 class="title">Asbl COOP in VIVO</h1>
+            
+        <div class="langues">
+          <a href="index.html">
+        <div class="image-base64 flag" data-id="wallon" data-src="wallon-base64.txt"></div></a>
+          <a href="AccueilEn.html">
+        <div class="image-base64 flag" data-id="anglais" data-src="anglais-base64.txt"></div></a>
+          <a href="AccueilSp.html">
+        <div class="image-base64 flag" data-id="espagnol" data-src="espagnol-base64.txt"></div></a>
+        </div>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+        </div>
+      
+      
+   
+  <nav id="menu-content" class="menu">
+    <ul>
+      <li><a href="AccueilSp.html">Bienvenido</a></li>
+      <li><a href="presentationSp.html">Presentacion</a>
+        <ul>
+          <li><a href="#">Mision e impacto</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Acerca de</a>
+        <ul>
+          <li><a href="#">Objetivos</a></li>
+          <li><a href="#">Medios de accion</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Resultados</a>
+        <ul>
+          <li><a href="#">Los exitos de la asociacion</a></li>
+          <li><a href="#">Testimonios y cifras</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contactos</a>
+        <ul>
+          <li><a href="#">Presentacion del equipo</a></li>
+          <li><a href="#">Respuestas a tus preguntas</a></li>
+        </ul>
+      </li>
+        </ul>
+      </li>
+    </ul>
+  
+</nav>
+    </header>
+</body>
+
+
+
+    <main id="content">
+      <section class="centercolumn">
+        <h2>Promover la formación técnica de laboratorio en los países subdesarrollados</h2>
+        <p>
+          Proporcionar la formación técnica-practica a los estudiantes de países en subdesarrollo a través de pasantías en Bélgica, permitiéndoles recuperar habilidades técnicas y mejorar la autonomía de los laboratorios en sus países de origen.
+        </p>
+
+        <div class="contenu-flex">
+          <div class="bloc">
+            <h3>El proyecto está dividido en tres áreas claves</h3>
+            <p><strong>Formación en Bélgica:</strong> secciones de formación técnico- practico en nuestras instituciones ( 2-3meses).</p>
+            <p><strong>Viaje y alojamiento:</strong> cobertura de los gastos del viaje y el alojamiento de los estudiantes durante su estancia en Bélgica.</p>
+            <p><strong>Donaciones de equipos:</strong> colaboración con empresas biofarmacéuticas para recoger equipos nuevos o no utilizados y enviarlos a los laboratorios de países subdesarrollados.</p>
+          </div>
+
+          <div class="bloc">
+            <h3>Impactos esperados</h3>
+            <p>Mejora de las habilidades técnicas y conocimientos prácticos de los estudiantes de países subdesarrollados.</p>
+            <p>Mayor autonomía y capacidad de los laboratorios en sus países de origen.
+</p>
+            <p>Promoción de la industria biofarmacéutica local, resultando en beneficios económicos y de salud a largo plazo.</p>
+          </div>
+        </div>
+
+        <div>
+          <h3>Porque es importante ?</h3>
+          <p>
+            Al proporcionar prácticas en Bélgica a los estudiantes de países subdesarrollados, les suministramos una formación técnico-académica y experimental. Esta oportunidad les permite ver más allá de sus limitaciones actuales, abriendo nuevos campos y posibilidades en la ciencia que quizás ni siquiera imaginaban debido a limitaciones económicas -técnicas o la falta de oportunidades en estos países. Traer a estos estudiantes a nuestras instalaciones les permitirá obtener una perspectiva global más amplia e inspirar un pensamiento innovador que pueda transformar su futuro y el de sus comunidades. Apoyar esta iniciativa no infiere solamente de capacitación inmediata sino también de empoderar a la próxima generación de científicos y profesionales para impulsar el cambio y la innovación en sus países de origen.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="centercolumn">
+        😄
+      </div>
+    </footer>
+
+<script>
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    var menu = document.getElementById("menu-content");
+    menu.classList.toggle("menu-active")
+   if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  });
+  fetch("banniere-base64.txt")
+  .then(res => res.text())
+  .then(base64 => {
+    document.getElementById("header").style.backgroundImage = `url(${base64})`;
+  });
+  document.querySelectorAll(".image-base64").forEach(div => {
+    const srcFile = div.dataset.src;
+    const altText = div.dataset.id || "image";
+
+    fetch(srcFile)
+    .then(response => response.text())
+    .then(base64 => {
+        const img = document.createElement("img");
+        img.src = base64;
+        img.alt = altText;
+        div.appendChild(img);
+    })
+    .catch(error => {
+    console.error('Erreur lors du chargement de ${srcFile} :', error);
+    div.innerText = "Image indisponible.";
+    })
+    fetch("banniere-base64.txt")
+    .then(response => response.txt())
+    .then(base64 =>{
+      const header = document.getElementById("header");
+      header.style.backgroundImage = 'url(${base64})';
+      header.style.backgroundRepeat = "repeat-x";
+      header.style.backgroundSize ="auto 100%"; //ajuste si besoin
+      header.style.backgroundPosition ="top center";
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement du fond d'en tête:", error);
+    })
+
+  });
+
+</script>
+
+  </body>
+</html>
