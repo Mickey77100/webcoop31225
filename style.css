@@ -37,8 +37,8 @@ header {
 
 /* Logo encodé */
 .image-base64 img { 
-  width: 150px;
-  height:150px;
+  width: 120px;
+  height:120px;
   border-radius: 5px;
   display: block;
   z-index: 0;
@@ -206,4 +206,5 @@ footer .centercolumn {
   .contenu-flex .bloc {
     flex: 1 1 100%;
   }
+
 }
