@@ -83,13 +83,14 @@ margin-right:auto;
 
 /* Bouton hamburger */
 .menu-btn {
-  font-size: 2em;
+  font-size: 1.5em;
   background: none;
+ color:blue;
   border: none;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 200px;
-  left: 15px;
+  left: 5px;
   z-index: 1000;
 }
 
@@ -105,7 +106,7 @@ margin-right:auto;
   top: 200px;
   left: 60px;
   width: 30%;
-  background: rgb(197, 198, 199);
+  background: rgb(217, 228, 240);
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
   padding: 1em;
   z-index: 999;
@@ -175,19 +176,21 @@ p {
 
 /* === FOOTER === */
 footer {
-  background-color: #59719A;
+  background-color: none;  
   color: white;
-  text-align: center;
-  padding: 0.5em;
-  font-size: 0.9em;
+  display:inline-flex;
+  /*height:30px;
+  margin:0 20px;*/
+
+  
 }
 
-footer .centercolumn {
+/*footer .centercolumn {
   max-width: 1000px;
   margin: auto;
-}
-
+}*/
 /* === RESPONSIVE DESIGN === */
+
 @media screen and (max-width: 768px) {
   .top-bar {
     flex-direction: column;
