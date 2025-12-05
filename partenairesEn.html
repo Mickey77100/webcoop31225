@@ -61,15 +61,15 @@
     </div>
       </main>
 
-<footer>
-      <a href="#">
-      <img src="tweeter.png" alt="tweeter"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-      <a href="#">
-      <img src="insta.jpeg" alt="instagram">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; </a>
-      <a href="#">
-      <img src="facebook.png" alt="facebook"></a>
-      
-    </footer>
+<div id="footer"></div>
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
 
  <script>
   document.getElementById("menu-toggle").addEventListener("click", function() {
